@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSIT Student Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom right, #d9f0ff, #b3dbff);
+    overflow-x:hidden;
+}
+
+/* Floating Shapes */
+.shape{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.4);
+    animation:float 8s infinite ease-in-out;
+}
+.shape:nth-child(1){width:220px;height:220px;top:5%;left:5%;}
+.shape:nth-child(2){width:160px;height:160px;bottom:5%;right:10%;}
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+    100%{transform:translateY(0);}
+}
+
+header{
+    text-align:center;
+    padding:40px 20px 10px;
+}
+
+header h1{
+    font-weight:700;
+    color:#0d3b66;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+header h1:hover{
+    background:linear-gradient(45deg,#0077ff,#00b4ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+header p{
+    margin-top:8px;
+    font-size:14px;
+    color:#003366;
+    opacity:0.7;
+}
+
+/* Sections */
+.section{
+    display:none;
+    padding:30px;
+}
+
+.active{
+    display:block;
+}
+
+/* Tables */
+table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:12px;
+    background:#e6f4ff;
+    padding:20px;
+    border-radius:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+}
+
+thead th{
+    background:linear-gradient(45deg,#0077ff,#00c6ff);
+    color:white;
+    padding:15px;
+    border-radius:20px;
+}
+
+tbody td{
+    background:#cce7ff;
+    padding:15px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+tbody tr:hover td{
+    background:#99d0ff;
+    transform:scale(1.03);
+}
+
+tfoot td{
+    background:#80c1ff;
+    padding:15px;
+    border-radius:20px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* Profile Layout */
+.profile-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px; /* More space between photo and info */
+    margin-bottom:40px;
+}
+
+.profile-container img{
+    width:200px;
+    height:350px;
+    object-fit:cover;
+    border-radius:100px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+    border:6px solid rgba(255,255,255,0.6);
+}
+
+.profile-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:2.5;
+    font-size:18px;
+    color:#003366;
+}
+
+/* Button */
+.back-btn{
+    margin-bottom:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#0077ff,#00c6ff);
+    color:white;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#003366;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="shape"></div>
+<div class="shape"></div>
+
+<header>
+    <h1 onclick="showProfile()">Tirol, Charls C. | BSIT-1C</h1>
+    <p>✨ Click my name to view my profile ✨</p>
+</header>
+
+<main>
+
+<!-- SCHEDULE -->
+<section id="schedule" class="section active">
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Subject</th>
+<th>Time</th>
+<th>Day/s</th>
+<th>Units</th>
+<th>Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>PATHfit 1</td><td>Movement Competency Training</td><td>11:00-12:00 NN</td><td>MW</td><td>2</td><td>C. Andales</td></tr>
+<tr><td>COMP 1</td><td>Introduction To Computing</td><td>8:00-9:00 AM</td><td>MWF</td><td>3</td><td>B. Empaces</td></tr>
+<tr><td>PROG 1</td><td>Computer Programming 1</td><td>9:00-10:00 AM</td><td>MWF</td><td>3</td><td>I. Eda</td></tr>
+<tr><td>GE 1</td><td>Mathematics In The Modern World</td><td>10:00-11:00 AM</td><td>MWF</td><td>3</td><td>J. Cadungog</td></tr>
+<tr><td>MATH</td><td>Pre-Calculus</td><td>1:00-2:00 PM</td><td>MWF</td><td>3</td><td>J. Yagong</td></tr>
+<tr><td>OPT</td><td>Office Productivity Tools</td><td>7:00-8:00 AM</td><td>MWF</td><td>3</td><td>L. Leonizo</td></tr>
+<tr><td>FIL 1</td><td>Sining ng Komunikasyon</td><td>7:00-8:30 AM</td><td>TTH</td><td>3</td><td>E. Ando</td></tr>
+<tr><td>NSTP 1</td><td>National Service Training Program 1</td><td>10:00-11:30 AM</td><td>TTH</td><td>3</td><td>L. Paquibot</td></tr>
+<tr><td>GE 2</td><td>Understanding the Self</td><td>8:30-10:00 AM</td><td>TTH</td><td>3</td><td>M. Yagong</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- PROFILE -->
+<section id="profile" class="section">
+
+<div class="profile-container">
+<img src="profile.jpg" alt="Profile Picture">
+<div class="profile-info">
+<p><strong>Name:</strong> Tirol, Charls C.</p>
+<p><strong>Student No.:</strong> 20250865</p>
+<p><strong>Course & Year:</strong> BSIT-1C</p>
+<p><strong>Term:</strong> 1st Semester</p>
+<p><strong>Academic Year:</strong> 2025-2026</p>
+</div>
+</div>
+
+<!-- BUTTON MOVED ABOVE TABLE -->
+<button class="back-btn" onclick="showSchedule()">⬅ Return to Schedule</button>
+
+<table>
+<thead>
+<tr>
+<th>Descriptive Title</th>
+<th>Final Grade</th>
+<th>Units Enrolled</th>
+<th>Units Earned</th>
+<th>Remarks</th>
+<th>Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Sining ng Komunikasyon</td><td>1.6</td><td>3</td><td>3</td><td>Passed</td><td>Mr. Emmanuel Ando</td></tr>
+<tr><td>Mathematics in the Modern World</td><td>1.0</td><td>3</td><td>3</td><td>Passed</td><td>Mrs. Jenysel Cadungog</td></tr>
+<tr><td>Understanding The Self</td><td>1.3</td><td>3</td><td>3</td><td>Passed</td><td>Mrs. Mariz Yagong</td></tr>
+<tr><td>NSTP 1</td><td>1.9</td><td>2</td><td>2</td><td>Passed</td><td>Mr. Leo Francis James Paquibot</td></tr>
+<tr><td>Movement Competency Training</td><td>1.4</td><td>3</td><td>3</td><td>Passed</td><td>Mrs. Charisma Andales</td></tr>
+<tr><td>Computer Programming 1</td><td>1.7</td><td>3</td><td>3</td><td>Passed</td><td>Mrs. Irene Eda</td></tr>
+<tr><td>Office Productivity Tools</td><td>1.3</td><td>3</td><td>3</td><td>Passed</td><td>Mr. Lourenze Leonizo</td></tr>
+<tr><td>Pre-Calculus for NON-STEM</td><td>1.6</td><td>3</td><td>3</td><td>Passed</td><td>Mr. Jordan Yagong</td></tr>
+<tr><td>Introduction To Computing</td><td>1.5</td><td>3</td><td>3</td><td>Passed</td><td>Mr. Bernie Empaces</td></tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="2">Total Units: 26</td>
+<td colspan="2">Total Units Earned: 26</td>
+<td colspan="2">Semesteral | Average Grade: 1.48</td>
+</tr>
+</tfoot>
+</table>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 BSIT-1C Student Portal
+</footer>
+
+<script>
+function showProfile(){
+    document.getElementById("schedule").classList.remove("active");
+    document.getElementById("profile").classList.add("active");
+}
+
+function showSchedule(){
+    document.getElementById("profile").classList.remove("active");
+    document.getElementById("schedule").classList.add("active");
+}
+</script>
+
+</body>
+</html>
